@@ -10,60 +10,58 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
   const js = dart_sdk.js;
   const ui = dart_sdk.ui;
   const _js_helper = dart_sdk._js_helper;
-  const math = dart_sdk.math;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
   const app = flutter_sdk.src__material__app;
+  const theme_data = flutter_sdk.src__material__theme_data;
+  const colors = flutter_sdk.src__material__colors;
   const framework = flutter_sdk.src__widgets__framework;
   const binding = flutter_sdk.src__widgets__binding;
-  const editable_text = flutter_sdk.src__widgets__editable_text;
   const scaffold = flutter_sdk.src__material__scaffold;
-  const container = flutter_sdk.src__widgets__container;
-  const box_decoration = flutter_sdk.src__painting__box_decoration;
-  const gradient = flutter_sdk.src__painting__gradient;
-  const colors = flutter_sdk.src__material__colors;
-  const alignment = flutter_sdk.src__painting__alignment;
   const basic = flutter_sdk.src__widgets__basic;
   const edge_insets = flutter_sdk.src__painting__edge_insets;
+  const single_child_scroll_view = flutter_sdk.src__widgets__single_child_scroll_view;
   const flex = flutter_sdk.src__rendering__flex;
   const text = flutter_sdk.src__widgets__text;
   const text_style = flutter_sdk.src__painting__text_style;
-  const border_radius = flutter_sdk.src__painting__border_radius;
-  const box_shadow = flutter_sdk.src__painting__box_shadow;
   const text_field = flutter_sdk.src__material__text_field;
   const input_decorator = flutter_sdk.src__material__input_decorator;
   const input_border = flutter_sdk.src__material__input_border;
+  const icon$ = flutter_sdk.src__widgets__icon;
+  const icons = flutter_sdk.src__material__icons;
   const text_input = flutter_sdk.src__services__text_input;
-  const text_formatter = flutter_sdk.src__services__text_formatter;
   const elevated_button = flutter_sdk.src__material__elevated_button;
-  const rounded_rectangle_border = flutter_sdk.src__painting__rounded_rectangle_border;
-  const text_editing = flutter_sdk.src__services__text_editing;
-  const snack_bar = flutter_sdk.src__material__snack_bar;
+  const navigator = flutter_sdk.src__widgets__navigator;
+  const page = flutter_sdk.src__material__page;
+  const app_bar = flutter_sdk.src__material__app_bar;
+  const scroll_view = flutter_sdk.src__widgets__scroll_view;
+  const floating_action_button = flutter_sdk.src__material__floating_action_button;
+  const card = flutter_sdk.src__material__card;
+  const ink_well = flutter_sdk.src__material__ink_well;
+  const form = flutter_sdk.src__widgets__form;
+  const editable_text = flutter_sdk.src__widgets__editable_text;
+  const date_picker = flutter_sdk.src__material__date_picker;
+  const icon_button = flutter_sdk.src__material__icon_button;
+  const text_form_field = flutter_sdk.src__material__text_form_field;
+  const date_format = flutter_sdk.src__intl__date_format;
+  const dropdown = flutter_sdk.src__material__dropdown;
+  const icon_data = flutter_sdk.src__widgets__icon_data;
   var $46zapp_entry = Object.create(dart.library);
   var main = Object.create(dart.library);
   var web_plugin_registrant = Object.create(dart.library);
   var login_screen = Object.create(dart.library);
-  var mask_text_input_formatter = Object.create(dart.library);
-  var login_controller = Object.create(dart.library);
-  var user_model = Object.create(dart.library);
+  var home_screen = Object.create(dart.library);
+  var evento_item = Object.create(dart.library);
+  var evento_model = Object.create(dart.library);
+  var add_evento_screen = Object.create(dart.library);
+  var evento_detail_screen = Object.create(dart.library);
   var $toString = dartx.toString;
-  var $isEmpty = dartx.isEmpty;
-  var $_get = dartx._get;
-  var $abs = dartx.abs;
-  var $contains = dartx.contains;
-  var $substring = dartx.substring;
-  var $take = dartx.take;
-  var $toList = dartx.toList;
-  var $length = dartx.length;
-  var $keys = dartx.keys;
-  var $fold = dartx.fold;
-  var $removeRange = dartx.removeRange;
-  var $insert = dartx.insert;
-  var $removeAt = dartx.removeAt;
-  var $clear = dartx.clear;
-  var $join = dartx.join;
   var $add = dartx.add;
-  var $isNotEmpty = dartx.isNotEmpty;
+  var $isEmpty = dartx.isEmpty;
+  var $length = dartx.length;
+  var $_get = dartx._get;
+  var $map = dartx.map;
+  var $toList = dartx.toList;
   dart._checkModuleNullSafetyMode(true);
   dart._checkModuleRuntimeTypes(false);
   var T = {
@@ -75,13 +73,24 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     VoidToNull: () => (T.VoidToNull = dart.constFn(dart.fnType(core.Null, [])))(),
     ObjectAndStackTraceTovoid: () => (T.ObjectAndStackTraceTovoid = dart.constFn(dart.fnType(dart.void, [core.Object, core.StackTrace])))(),
     ZoneAndZoneDelegateAndZone__Tovoid: () => (T.ZoneAndZoneDelegateAndZone__Tovoid = dart.constFn(dart.fnType(dart.void, [async.Zone, async.ZoneDelegate, async.Zone, core.String])))(),
-    IdentityMapOfString$RegExp: () => (T.IdentityMapOfString$RegExp = dart.constFn(_js_helper.IdentityMap$(core.String, core.RegExp)))(),
-    JSArrayOfColor: () => (T.JSArrayOfColor = dart.constFn(_interceptors.JSArray$(ui.Color)))(),
-    JSArrayOfBoxShadow: () => (T.JSArrayOfBoxShadow = dart.constFn(_interceptors.JSArray$(box_shadow.BoxShadow)))(),
-    JSArrayOfTextInputFormatter: () => (T.JSArrayOfTextInputFormatter = dart.constFn(_interceptors.JSArray$(text_formatter.TextInputFormatter)))(),
+    ObjectN: () => (T.ObjectN = dart.constFn(dart.nullable(core.Object)))(),
+    BuildContextToHomeScreen: () => (T.BuildContextToHomeScreen = dart.constFn(dart.fnType(home_screen.HomeScreen, [framework.BuildContext])))(),
     JSArrayOfWidget: () => (T.JSArrayOfWidget = dart.constFn(_interceptors.JSArray$(framework.Widget)))(),
-    intAndStringToint: () => (T.intAndStringToint = dart.constFn(dart.fnType(core.int, [core.int, core.String])))(),
-    FutureOfNull: () => (T.FutureOfNull = dart.constFn(async.Future$(core.Null)))()
+    JSArrayOfEvento: () => (T.JSArrayOfEvento = dart.constFn(_interceptors.JSArray$(evento_model.Evento)))(),
+    BuildContextToEventoDetailScreen: () => (T.BuildContextToEventoDetailScreen = dart.constFn(dart.fnType(evento_detail_screen.EventoDetailScreen, [framework.BuildContext])))(),
+    BuildContextAndintToEventoItem: () => (T.BuildContextAndintToEventoItem = dart.constFn(dart.fnType(evento_item.EventoItem, [framework.BuildContext, core.int])))(),
+    MaterialPageRouteOfEvento: () => (T.MaterialPageRouteOfEvento = dart.constFn(page.MaterialPageRoute$(evento_model.Evento)))(),
+    BuildContextToAddEventoScreen: () => (T.BuildContextToAddEventoScreen = dart.constFn(dart.fnType(add_evento_screen.AddEventoScreen, [framework.BuildContext])))(),
+    FutureOfvoid: () => (T.FutureOfvoid = dart.constFn(async.Future$(dart.void)))(),
+    VoidToFutureOfvoid: () => (T.VoidToFutureOfvoid = dart.constFn(dart.fnType(T.FutureOfvoid(), [])))(),
+    IdentityMapOfString$dynamic: () => (T.IdentityMapOfString$dynamic = dart.constFn(_js_helper.IdentityMap$(core.String, dart.dynamic)))(),
+    GlobalKeyOfFormState: () => (T.GlobalKeyOfFormState = dart.constFn(framework.GlobalKey$(form.FormState)))(),
+    StringN: () => (T.StringN = dart.constFn(dart.nullable(core.String)))(),
+    StringNToStringN: () => (T.StringNToStringN = dart.constFn(dart.fnType(T.StringN(), [T.StringN()])))(),
+    DropdownButtonFormFieldOfString: () => (T.DropdownButtonFormFieldOfString = dart.constFn(dropdown.DropdownButtonFormField$(core.String)))(),
+    DropdownMenuItemOfString: () => (T.DropdownMenuItemOfString = dart.constFn(dropdown.DropdownMenuItem$(core.String)))(),
+    StringToDropdownMenuItemOfString: () => (T.StringToDropdownMenuItemOfString = dart.constFn(dart.fnType(T.DropdownMenuItemOfString(), [core.String])))(),
+    StringNTovoid: () => (T.StringNTovoid = dart.constFn(dart.fnType(dart.void, [T.StringN()])))()
   };
   const CT = Object.create({
     _: () => (C, CT)
@@ -93,10 +102,10 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     get C1() {
       return C[1] = dart.const({
         __proto__: edge_insets.EdgeInsets.prototype,
-        [EdgeInsets_bottom]: 0,
-        [EdgeInsets_right]: 32,
-        [EdgeInsets_top]: 0,
-        [EdgeInsets_left]: 32
+        [EdgeInsets_bottom]: 24,
+        [EdgeInsets_right]: 24,
+        [EdgeInsets_top]: 24,
+        [EdgeInsets_left]: 24
       });
     },
     get C2() {
@@ -108,31 +117,25 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
         [EdgeInsets_left]: 16
       });
     },
-    get C4() {
-      return C[4] = dart.const({
-        __proto__: mask_text_input_formatter.MaskAutoCompletionType.prototype,
-        [_Enum__name]: "lazy",
-        [_Enum_index]: 0
-      });
-    },
-    get C5() {
-      return C[5] = dart.const({
-        __proto__: mask_text_input_formatter.MaskAutoCompletionType.prototype,
-        [_Enum__name]: "eager",
-        [_Enum_index]: 1
-      });
-    },
     get C3() {
-      return C[3] = dart.constList([C[4] || CT.C4, C[5] || CT.C5], mask_text_input_formatter.MaskAutoCompletionType);
+      return C[3] = dart.const({
+        __proto__: edge_insets.EdgeInsets.prototype,
+        [EdgeInsets_bottom]: 8,
+        [EdgeInsets_right]: 0,
+        [EdgeInsets_top]: 8,
+        [EdgeInsets_left]: 0
+      });
     }
   }, false);
-  var C = Array(6).fill(void 0);
+  var C = Array(4).fill(void 0);
   var I = [
     "file:///zapp/project/lib/main.dart",
-    "file:///zapp/project/lib/views/login_screen.dart",
-    "package:mask_text_input_formatter/mask_text_input_formatter.dart",
-    "file:///zapp/project/lib/controllers/login_controller.dart",
-    "file:///zapp/project/lib/models/user_model.dart"
+    "file:///zapp/project/lib/login_screen.dart",
+    "file:///zapp/project/lib/home_screen.dart",
+    "file:///zapp/project/lib/evento_item.dart",
+    "file:///zapp/project/lib/evento_model.dart",
+    "file:///zapp/project/lib/add_evento_screen.dart",
+    "file:///zapp/project/lib/evento_detail_screen.dart"
   ];
   $46zapp_entry.runAppGuarded = function runAppGuarded() {
     async.runZonedGuarded(core.Null, dart.fn(() => {
@@ -167,7 +170,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
   };
   main.MyApp = class MyApp extends framework.StatelessWidget {
     build(context) {
-      return new app.MaterialApp.new({debugShowCheckedModeBanner: false, home: new login_screen.LoginScreen.new()});
+      return new app.MaterialApp.new({title: "Eventos Comunitários", debugShowCheckedModeBanner: false, theme: theme_data.ThemeData.new({primarySwatch: colors.Colors.blue, visualDensity: theme_data.VisualDensity.adaptivePlatformDensity}), home: new login_screen.LoginScreen.new()});
     }
     static ['_#new#tearOff']() {
       return new main.MyApp.new();
@@ -189,45 +192,21 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
   };
   web_plugin_registrant.registerPlugins = function registerPlugins() {
   };
-  var nameController = dart.privateName(login_screen, "LoginScreen.nameController");
-  var maskFormatter = dart.privateName(login_screen, "LoginScreen.maskFormatter");
-  var loginController = dart.privateName(login_screen, "LoginScreen.loginController");
   var EdgeInsets_bottom = dart.privateName(edge_insets, "EdgeInsets.bottom");
   var EdgeInsets_right = dart.privateName(edge_insets, "EdgeInsets.right");
   var EdgeInsets_top = dart.privateName(edge_insets, "EdgeInsets.top");
   var EdgeInsets_left = dart.privateName(edge_insets, "EdgeInsets.left");
   login_screen.LoginScreen = class LoginScreen extends framework.StatelessWidget {
-    get nameController() {
-      return this[nameController];
-    }
-    set nameController(value) {
-      super.nameController = value;
-    }
-    get maskFormatter() {
-      return this[maskFormatter];
-    }
-    set maskFormatter(value) {
-      super.maskFormatter = value;
-    }
-    get loginController() {
-      return this[loginController];
-    }
-    set loginController(value) {
-      super.loginController = value;
-    }
     build(context) {
-      return new scaffold.Scaffold.new({body: new container.Container.new({decoration: new box_decoration.BoxDecoration.new({gradient: new gradient.LinearGradient.new({colors: T.JSArrayOfColor().of([colors.Colors.deepPurple.shade700, colors.Colors.deepPurple.shade300]), begin: alignment.Alignment.topCenter, end: alignment.Alignment.bottomCenter})}), child: new basic.Center.new({child: new basic.Padding.new({padding: C[1] || CT.C1, child: new basic.Column.new({mainAxisAlignment: flex.MainAxisAlignment.center, crossAxisAlignment: flex.CrossAxisAlignment.stretch, children: T.JSArrayOfWidget().of([new text.Text.new("Bem-vindo", {textAlign: ui.TextAlign.center, style: new text_style.TextStyle.new({fontSize: 32, fontWeight: ui.FontWeight.bold, color: colors.Colors.white})}), new basic.SizedBox.new({height: 8}), new text.Text.new("Faça login para continuar", {textAlign: ui.TextAlign.center, style: new text_style.TextStyle.new({fontSize: 16, color: colors.Colors.white70})}), new basic.SizedBox.new({height: 40}), new container.Container.new({decoration: new box_decoration.BoxDecoration.new({color: colors.Colors.white, borderRadius: new border_radius.BorderRadius.circular(12), boxShadow: T.JSArrayOfBoxShadow().of([new box_shadow.BoxShadow.new({color: colors.Colors.black26, blurRadius: 8, offset: new ui.Offset.new(0, 4)})])}), child: new basic.Padding.new({padding: C[2] || CT.C2, child: new basic.Column.new({children: T.JSArrayOfWidget().of([new text_field.TextField.new({controller: this.nameController, decoration: new input_decorator.InputDecoration.new({labelText: "Nome", border: new input_border.OutlineInputBorder.new({borderRadius: new border_radius.BorderRadius.circular(10)})})}), new basic.SizedBox.new({height: 16}), new text_field.TextField.new({keyboardType: text_input.TextInputType.phone, inputFormatters: T.JSArrayOfTextInputFormatter().of([this.maskFormatter]), decoration: new input_decorator.InputDecoration.new({labelText: "Telefone", border: new input_border.OutlineInputBorder.new({borderRadius: new border_radius.BorderRadius.circular(10)})})}), new basic.SizedBox.new({height: 20}), new elevated_button.ElevatedButton.new({onPressed: dart.fn(() => {
-                              this.loginController.login(this.nameController.text, this.maskFormatter.getMaskedText(), context);
-                            }, T.VoidTovoid()), style: elevated_button.ElevatedButton.styleFrom({backgroundColor: colors.Colors.deepPurple.shade600, padding: new edge_insets.EdgeInsets.symmetric({horizontal: 40, vertical: 15}), shape: new rounded_rectangle_border.RoundedRectangleBorder.new({borderRadius: new border_radius.BorderRadius.circular(10)})}), child: new text.Text.new("Entrar", {style: new text_style.TextStyle.new({color: colors.Colors.white, fontSize: 18})})})])})})})])})})})})});
+      return new scaffold.Scaffold.new({body: new basic.Padding.new({padding: C[1] || CT.C1, child: new basic.Center.new({child: new single_child_scroll_view.SingleChildScrollView.new({child: new basic.Column.new({mainAxisAlignment: flex.MainAxisAlignment.center, children: T.JSArrayOfWidget().of([new text.Text.new("Bem-vindo", {style: new text_style.TextStyle.new({fontSize: 32, fontWeight: ui.FontWeight.bold, color: colors.Colors.blue})}), new basic.SizedBox.new({height: 16}), new text.Text.new("Faça login para continuar", {style: new text_style.TextStyle.new({fontSize: 16})}), new basic.SizedBox.new({height: 32}), new text_field.TextField.new({decoration: new input_decorator.InputDecoration.new({labelText: "Nome", border: new input_border.OutlineInputBorder.new(), prefixIcon: new icon$.Icon.new(icons.Icons.person)})}), new basic.SizedBox.new({height: 16}), new text_field.TextField.new({decoration: new input_decorator.InputDecoration.new({labelText: "Telefone", border: new input_border.OutlineInputBorder.new(), prefixIcon: new icon$.Icon.new(icons.Icons.phone)}), keyboardType: text_input.TextInputType.phone}), new basic.SizedBox.new({height: 32}), new basic.SizedBox.new({width: 1 / 0, child: new elevated_button.ElevatedButton.new({onPressed: dart.fn(() => {
+                        navigator.Navigator.pushReplacement(dart.dynamic, T.ObjectN(), context, new page.MaterialPageRoute.new({builder: dart.fn(context => new home_screen.HomeScreen.new(), T.BuildContextToHomeScreen())}));
+                      }, T.VoidTovoid()), child: new text.Text.new("Entrar"), style: elevated_button.ElevatedButton.styleFrom({padding: new edge_insets.EdgeInsets.symmetric({vertical: 16})})})})])})})})})});
     }
     static ['_#new#tearOff']() {
       return new login_screen.LoginScreen.new();
     }
   };
   (login_screen.LoginScreen.new = function() {
-    this[nameController] = new editable_text.TextEditingController.new();
-    this[maskFormatter] = new mask_text_input_formatter.MaskTextInputFormatter.new({mask: "(##) #####-####", filter: new (T.IdentityMapOfString$RegExp()).from(["#", core.RegExp.new("[0-9]")])});
-    this[loginController] = new login_controller.LoginController.new();
     login_screen.LoginScreen.__proto__.new.call(this);
     ;
   }).prototype = login_screen.LoginScreen.prototype;
@@ -238,484 +217,424 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     build: dart.fnType(framework.Widget, [framework.BuildContext])
   }));
   dart.setLibraryUri(login_screen.LoginScreen, I[1]);
-  dart.setFieldSignature(login_screen.LoginScreen, () => ({
-    __proto__: dart.getFields(login_screen.LoginScreen.__proto__),
-    nameController: dart.finalFieldType(editable_text.TextEditingController),
-    maskFormatter: dart.finalFieldType(mask_text_input_formatter.MaskTextInputFormatter),
-    loginController: dart.finalFieldType(login_controller.LoginController)
-  }));
-  var _name = dart.privateName(core, "_name");
-  var _enumToString = dart.privateName(core, "_enumToString");
-  var _Enum__name = dart.privateName(core, "_Enum._name");
-  var _Enum_index = dart.privateName(core, "_Enum.index");
-  mask_text_input_formatter.MaskAutoCompletionType = class MaskAutoCompletionType extends core._Enum {
-    [_enumToString]() {
-      return "MaskAutoCompletionType." + this[_name];
-    }
-  };
-  (mask_text_input_formatter.MaskAutoCompletionType.new = function(index, name) {
-    mask_text_input_formatter.MaskAutoCompletionType.__proto__.new.call(this, index, name);
-    ;
-  }).prototype = mask_text_input_formatter.MaskAutoCompletionType.prototype;
-  dart.addTypeTests(mask_text_input_formatter.MaskAutoCompletionType);
-  dart.addTypeCaches(mask_text_input_formatter.MaskAutoCompletionType);
-  dart.setMethodSignature(mask_text_input_formatter.MaskAutoCompletionType, () => ({
-    __proto__: dart.getMethods(mask_text_input_formatter.MaskAutoCompletionType.__proto__),
-    [_enumToString]: dart.fnType(core.String, [])
-  }));
-  dart.setLibraryUri(mask_text_input_formatter.MaskAutoCompletionType, I[2]);
-  dart.setStaticFieldSignature(mask_text_input_formatter.MaskAutoCompletionType, () => ['values', 'lazy', 'eager']);
-  dart.defineLazy(mask_text_input_formatter.MaskAutoCompletionType, {
-    /*mask_text_input_formatter.MaskAutoCompletionType.values*/get values() {
-      return C[3] || CT.C3;
-    },
-    /*mask_text_input_formatter.MaskAutoCompletionType.lazy*/get lazy() {
-      return C[4] || CT.C4;
-    },
-    /*mask_text_input_formatter.MaskAutoCompletionType.eager*/get eager() {
-      return C[5] || CT.C5;
-    }
-  }, false);
-  var _mask = dart.privateName(mask_text_input_formatter, "_mask");
-  var _maskChars = dart.privateName(mask_text_input_formatter, "_maskChars");
-  var _maskFilter = dart.privateName(mask_text_input_formatter, "_maskFilter");
-  var _maskLength = dart.privateName(mask_text_input_formatter, "_maskLength");
-  var _resultTextArray = dart.privateName(mask_text_input_formatter, "_resultTextArray");
-  var _resultTextMasked = dart.privateName(mask_text_input_formatter, "_resultTextMasked");
-  var _type = dart.privateName(mask_text_input_formatter, "_type");
-  var _updateFilter = dart.privateName(mask_text_input_formatter, "_updateFilter");
-  var _calcMaskLength = dart.privateName(mask_text_input_formatter, "_calcMaskLength");
-  var _symbolArray = dart.privateName(mask_text_input_formatter, "_symbolArray");
-  mask_text_input_formatter.MaskTextInputFormatter = class MaskTextInputFormatter extends core.Object {
-    get type() {
-      return this[_type];
-    }
-    static ['_#new#tearOff'](opts) {
-      let mask = opts && 'mask' in opts ? opts.mask : null;
-      let filter = opts && 'filter' in opts ? opts.filter : null;
-      let initialText = opts && 'initialText' in opts ? opts.initialText : null;
-      let type = opts && 'type' in opts ? opts.type : C[4] || CT.C4;
-      return new mask_text_input_formatter.MaskTextInputFormatter.new({mask: mask, filter: filter, initialText: initialText, type: type});
-    }
-    static ['_#eager#tearOff'](opts) {
-      let mask = opts && 'mask' in opts ? opts.mask : null;
-      let filter = opts && 'filter' in opts ? opts.filter : null;
-      let initialText = opts && 'initialText' in opts ? opts.initialText : null;
-      return new mask_text_input_formatter.MaskTextInputFormatter.eager({mask: mask, filter: filter, initialText: initialText});
-    }
-    updateMask(opts) {
-      let mask = opts && 'mask' in opts ? opts.mask : null;
-      let filter = opts && 'filter' in opts ? opts.filter : null;
-      let type = opts && 'type' in opts ? opts.type : null;
-      let newValue = opts && 'newValue' in opts ? opts.newValue : null;
-      this[_mask] = mask;
-      if (filter != null) {
-        this[_updateFilter](filter);
-      }
-      if (type != null) {
-        this[_type] = type;
-      }
-      this[_calcMaskLength]();
-      let targetValue = newValue;
-      if (targetValue == null) {
-        let unmaskedText = this.getUnmaskedText();
-        targetValue = new text_input.TextEditingValue.new({text: unmaskedText, selection: new text_editing.TextSelection.collapsed({offset: unmaskedText.length})});
-      }
-      this.clear();
-      return this.formatEditUpdate(text_input.TextEditingValue.empty, targetValue);
-    }
-    getMask() {
-      return this[_mask];
-    }
-    getMaskedText() {
-      return this[_resultTextMasked];
-    }
-    getUnmaskedText() {
-      return this[_resultTextArray].toString();
-    }
-    isFill() {
-      return this[_resultTextArray].length === this[_maskLength];
-    }
-    clear() {
-      this[_resultTextMasked] = "";
-      this[_resultTextArray].clear();
-    }
-    maskText(text) {
-      return new mask_text_input_formatter.MaskTextInputFormatter.new({mask: this[_mask], filter: this[_maskFilter], initialText: text}).getMaskedText();
-    }
-    unmaskText(text) {
-      return new mask_text_input_formatter.MaskTextInputFormatter.new({mask: this[_mask], filter: this[_maskFilter], initialText: text}).getUnmaskedText();
-    }
-    formatEditUpdate(oldValue, newValue) {
-      let t3, t2, t2$;
-      let mask = this[_mask];
-      if (mask == null || mask[$isEmpty] === true) {
-        this[_resultTextMasked] = newValue.text;
-        this[_resultTextArray].set(newValue.text);
-        return newValue;
-      }
-      if (oldValue.text[$isEmpty]) {
-        this[_resultTextArray].clear();
-      }
-      let beforeText = oldValue.text;
-      let afterText = newValue.text;
-      let beforeSelection = oldValue.selection;
-      let afterSelection = newValue.selection;
-      let beforeSelectionStart = afterSelection.isValid ? beforeSelection.isValid ? beforeSelection.start : 0 : 0;
-      for (let i = 0; i < beforeSelectionStart && i < beforeText.length && i < afterText.length; i = i + 1) {
-        if (beforeText[$_get](i) !== afterText[$_get](i)) {
-          beforeSelectionStart = i;
-          break;
-        }
-      }
-      let beforeSelectionLength = afterSelection.isValid ? beforeSelection.isValid ? beforeSelection.end - beforeSelectionStart : 0 : oldValue.text.length;
-      let lengthDifference = afterText.length - (beforeText.length - beforeSelectionLength);
-      let lengthRemoved = lengthDifference < 0 ? lengthDifference[$abs]() : 0;
-      let lengthAdded = lengthDifference > 0 ? lengthDifference : 0;
-      let afterChangeStart = math.max(core.int, 0, beforeSelectionStart - lengthRemoved);
-      let afterChangeEnd = math.max(core.int, 0, afterChangeStart + lengthAdded);
-      let beforeReplaceStart = math.max(core.int, 0, beforeSelectionStart - lengthRemoved);
-      let beforeReplaceLength = beforeSelectionLength + lengthRemoved;
-      let beforeResultTextLength = this[_resultTextArray].length;
-      let currentResultTextLength = this[_resultTextArray].length;
-      let currentResultSelectionStart = 0;
-      let currentResultSelectionLength = 0;
-      for (let i = 0; i < math.min(core.num, beforeReplaceStart + beforeReplaceLength, mask.length); i = i + 1) {
-        if (this[_maskChars][$contains](mask[$_get](i)) && currentResultTextLength > 0) {
-          currentResultTextLength = currentResultTextLength - 1;
-          if (i < beforeReplaceStart) {
-            currentResultSelectionStart = currentResultSelectionStart + 1;
-          }
-          if (i >= beforeReplaceStart) {
-            currentResultSelectionLength = currentResultSelectionLength + 1;
-          }
-        }
-      }
-      let replacementText = afterText[$substring](afterChangeStart, afterChangeEnd);
-      let targetCursorPosition = currentResultSelectionStart;
-      if (replacementText[$isEmpty]) {
-        this[_resultTextArray].removeRange(currentResultSelectionStart, currentResultSelectionStart + currentResultSelectionLength);
-      } else {
-        if (currentResultSelectionLength > 0) {
-          this[_resultTextArray].removeRange(currentResultSelectionStart, currentResultSelectionStart + currentResultSelectionLength);
-          currentResultSelectionLength = 0;
-        }
-        this[_resultTextArray].insert(currentResultSelectionStart, replacementText);
-        targetCursorPosition = targetCursorPosition + replacementText.length;
-      }
-      if (beforeResultTextLength === 0 && this[_resultTextArray].length > 1) {
-        let prefixLength = 0;
-        for (let i = 0; i < mask.length; i = i + 1) {
-          if (this[_maskChars][$contains](mask[$_get](i))) {
-            prefixLength = i;
-            break;
-          }
-        }
-        if (prefixLength > 0) {
-          let resultPrefix = this[_resultTextArray][_symbolArray][$take](prefixLength)[$toList]();
-          let effectivePrefixLength = math.min(core.int, this[_resultTextArray].length, resultPrefix[$length]);
-          for (let j = 0; j < effectivePrefixLength; j = j + 1) {
-            if (mask[$_get](j) !== resultPrefix[$_get](j)) {
-              this[_resultTextArray].removeRange(0, j);
-              break;
-            }
-            if (j === effectivePrefixLength - 1) {
-              this[_resultTextArray].removeRange(0, effectivePrefixLength);
-              break;
-            }
-          }
-        }
-      }
-      let curTextPos = 0;
-      let maskPos = 0;
-      this[_resultTextMasked] = "";
-      let cursorPos = -1;
-      let nonMaskedCount = 0;
-      let maskInside = 0;
-      while (maskPos < mask.length) {
-        let curMaskChar = mask[$_get](maskPos);
-        let isMaskChar = this[_maskChars][$contains](curMaskChar);
-        let curTextInRange = curTextPos < this[_resultTextArray].length;
-        let curTextChar = null;
-        if (isMaskChar && curTextInRange) {
-          if (maskInside > 0) {
-            this[_resultTextArray].removeRange(curTextPos - maskInside, curTextPos);
-            curTextPos = curTextPos - maskInside;
-          }
-          maskInside = 0;
-          while (curTextChar == null && curTextInRange) {
-            let potentialTextChar = this[_resultTextArray]._get(curTextPos);
-            if (dart.test((t2$ = (t2 = this[_maskFilter], t2 == null ? null : (t3 = t2[$_get](curMaskChar), t3 == null ? null : t3.hasMatch(potentialTextChar))), t2$ == null ? false : t2$))) {
-              curTextChar = potentialTextChar;
-            } else {
-              this[_resultTextArray].removeAt(curTextPos);
-              curTextInRange = curTextPos < this[_resultTextArray].length;
-              if (curTextPos <= targetCursorPosition) {
-                targetCursorPosition = targetCursorPosition - 1;
-              }
-            }
-          }
-        } else if (!isMaskChar && !curTextInRange && this.type === mask_text_input_formatter.MaskAutoCompletionType.eager) {
-          curTextInRange = true;
-        }
-        if (isMaskChar && curTextInRange && curTextChar != null) {
-          this[_resultTextMasked] = this[_resultTextMasked] + dart.notNull(curTextChar);
-          if (curTextPos === targetCursorPosition && cursorPos === -1) {
-            cursorPos = maskPos - nonMaskedCount;
-          }
-          nonMaskedCount = 0;
-          curTextPos = curTextPos + 1;
-        } else {
-          if (!curTextInRange) {
-            if (maskInside > 0) {
-              curTextPos = curTextPos - maskInside;
-              maskInside = 0;
-              nonMaskedCount = 0;
-              continue;
-            } else {
-              break;
-            }
-          } else {
-            this[_resultTextMasked] = this[_resultTextMasked] + mask[$_get](maskPos);
-            if (!isMaskChar && curTextPos < this[_resultTextArray].length && curMaskChar === this[_resultTextArray]._get(curTextPos)) {
-              if (this.type === mask_text_input_formatter.MaskAutoCompletionType.lazy && lengthAdded <= 1) {
-              } else {
-                maskInside = maskInside + 1;
-                curTextPos = curTextPos + 1;
-              }
-            } else if (maskInside > 0) {
-              curTextPos = curTextPos - maskInside;
-              maskInside = 0;
-            }
-          }
-          if (curTextPos === targetCursorPosition && cursorPos === -1 && !curTextInRange) {
-            cursorPos = maskPos;
-          }
-          if (this.type === mask_text_input_formatter.MaskAutoCompletionType.lazy || lengthRemoved > 0 || currentResultSelectionLength > 0 || beforeReplaceLength > 0) {
-            nonMaskedCount = nonMaskedCount + 1;
-          }
-        }
-        maskPos = maskPos + 1;
-      }
-      if (nonMaskedCount > 0) {
-        this[_resultTextMasked] = this[_resultTextMasked][$substring](0, this[_resultTextMasked].length - nonMaskedCount);
-        cursorPos = cursorPos - nonMaskedCount;
-      }
-      if (this[_resultTextArray].length > this[_maskLength]) {
-        this[_resultTextArray].removeRange(this[_maskLength], this[_resultTextArray].length);
-      }
-      let finalCursorPosition = cursorPos < 0 ? this[_resultTextMasked].length : cursorPos;
-      return new text_input.TextEditingValue.new({text: this[_resultTextMasked], selection: new text_editing.TextSelection.new({baseOffset: finalCursorPosition, extentOffset: finalCursorPosition, affinity: newValue.selection.affinity, isDirectional: newValue.selection.isDirectional})});
-    }
-    [_calcMaskLength]() {
-      this[_maskLength] = 0;
-      let mask = this[_mask];
-      if (mask != null) {
-        for (let i = 0; i < mask.length; i = i + 1) {
-          if (this[_maskChars][$contains](mask[$_get](i))) {
-            this[_maskLength] = this[_maskLength] + 1;
-          }
-        }
-      }
-    }
-    [_updateFilter](filter) {
-      let t2, t2$;
-      this[_maskFilter] = filter;
-      this[_maskChars] = (t2$ = (t2 = this[_maskFilter], t2 == null ? null : t2[$keys][$toList]({growable: false})), t2$ == null ? T.JSArrayOfString().of([]) : t2$);
-    }
-  };
-  (mask_text_input_formatter.MaskTextInputFormatter.new = function(opts) {
-    let t2;
-    let mask = opts && 'mask' in opts ? opts.mask : null;
-    let filter = opts && 'filter' in opts ? opts.filter : null;
-    let initialText = opts && 'initialText' in opts ? opts.initialText : null;
-    let type = opts && 'type' in opts ? opts.type : C[4] || CT.C4;
-    this[_mask] = null;
-    this[_maskChars] = T.JSArrayOfString().of([]);
-    this[_maskFilter] = null;
-    this[_maskLength] = 0;
-    this[_resultTextArray] = new mask_text_input_formatter._TextMatcher.new();
-    this[_resultTextMasked] = "";
-    this[_type] = type;
-    this.updateMask({mask: mask, filter: (t2 = filter, t2 == null ? new (T.IdentityMapOfString$RegExp()).from(["#", core.RegExp.new("[0-9]"), "A", core.RegExp.new("[^0-9]")]) : t2), newValue: initialText == null ? null : new text_input.TextEditingValue.new({text: initialText, selection: new text_editing.TextSelection.collapsed({offset: initialText.length})})});
-  }).prototype = mask_text_input_formatter.MaskTextInputFormatter.prototype;
-  (mask_text_input_formatter.MaskTextInputFormatter.eager = function(opts) {
-    let mask = opts && 'mask' in opts ? opts.mask : null;
-    let filter = opts && 'filter' in opts ? opts.filter : null;
-    let initialText = opts && 'initialText' in opts ? opts.initialText : null;
-    mask_text_input_formatter.MaskTextInputFormatter.new.call(this, {mask: mask, filter: filter, initialText: initialText, type: mask_text_input_formatter.MaskAutoCompletionType.eager});
-  }).prototype = mask_text_input_formatter.MaskTextInputFormatter.prototype;
-  dart.addTypeTests(mask_text_input_formatter.MaskTextInputFormatter);
-  dart.addTypeCaches(mask_text_input_formatter.MaskTextInputFormatter);
-  mask_text_input_formatter.MaskTextInputFormatter[dart.implements] = () => [text_formatter.TextInputFormatter];
-  dart.setMethodSignature(mask_text_input_formatter.MaskTextInputFormatter, () => ({
-    __proto__: dart.getMethods(mask_text_input_formatter.MaskTextInputFormatter.__proto__),
-    updateMask: dart.fnType(text_input.TextEditingValue, [], {filter: dart.nullable(core.Map$(core.String, core.RegExp)), mask: dart.nullable(core.String), newValue: dart.nullable(text_input.TextEditingValue), type: dart.nullable(mask_text_input_formatter.MaskAutoCompletionType)}, {}),
-    getMask: dart.fnType(dart.nullable(core.String), []),
-    getMaskedText: dart.fnType(core.String, []),
-    getUnmaskedText: dart.fnType(core.String, []),
-    isFill: dart.fnType(core.bool, []),
-    clear: dart.fnType(dart.void, []),
-    maskText: dart.fnType(core.String, [core.String]),
-    unmaskText: dart.fnType(core.String, [core.String]),
-    formatEditUpdate: dart.fnType(text_input.TextEditingValue, [text_input.TextEditingValue, text_input.TextEditingValue]),
-    [_calcMaskLength]: dart.fnType(dart.void, []),
-    [_updateFilter]: dart.fnType(dart.void, [core.Map$(core.String, core.RegExp)])
-  }));
-  dart.setGetterSignature(mask_text_input_formatter.MaskTextInputFormatter, () => ({
-    __proto__: dart.getGetters(mask_text_input_formatter.MaskTextInputFormatter.__proto__),
-    type: mask_text_input_formatter.MaskAutoCompletionType
-  }));
-  dart.setLibraryUri(mask_text_input_formatter.MaskTextInputFormatter, I[2]);
-  dart.setFieldSignature(mask_text_input_formatter.MaskTextInputFormatter, () => ({
-    __proto__: dart.getFields(mask_text_input_formatter.MaskTextInputFormatter.__proto__),
-    [_type]: dart.fieldType(mask_text_input_formatter.MaskAutoCompletionType),
-    [_mask]: dart.fieldType(dart.nullable(core.String)),
-    [_maskChars]: dart.fieldType(core.List$(core.String)),
-    [_maskFilter]: dart.fieldType(dart.nullable(core.Map$(core.String, core.RegExp))),
-    [_maskLength]: dart.fieldType(core.int),
-    [_resultTextArray]: dart.finalFieldType(mask_text_input_formatter._TextMatcher),
-    [_resultTextMasked]: dart.fieldType(core.String)
-  }));
-  mask_text_input_formatter._TextMatcher = class _TextMatcher extends core.Object {
-    get length() {
-      return this[_symbolArray][$fold](core.int, 0, dart.fn((prev, match) => prev + match.length, T.intAndStringToint()));
-    }
-    removeRange(start, end) {
-      return this[_symbolArray][$removeRange](start, end);
-    }
-    insert(start, substring) {
-      for (let i = 0; i < substring.length; i = i + 1) {
-        this[_symbolArray][$insert](start + i, substring[$_get](i));
-      }
-    }
-    removeAt(index) {
-      return this[_symbolArray][$removeAt](index);
-    }
-    _get(index) {
-      return this[_symbolArray][$_get](index);
-    }
-    clear() {
-      return this[_symbolArray][$clear]();
-    }
-    toString() {
-      return this[_symbolArray][$join]();
-    }
-    set(text) {
-      this[_symbolArray][$clear]();
-      for (let i = 0; i < text.length; i = i + 1) {
-        this[_symbolArray][$add](text[$_get](i));
-      }
+  home_screen.HomeScreen = class HomeScreen extends framework.StatefulWidget {
+    createState() {
+      return new home_screen._HomeScreenState.new();
     }
     static ['_#new#tearOff']() {
-      return new mask_text_input_formatter._TextMatcher.new();
+      return new home_screen.HomeScreen.new();
     }
   };
-  (mask_text_input_formatter._TextMatcher.new = function() {
-    this[_symbolArray] = T.JSArrayOfString().of([]);
+  (home_screen.HomeScreen.new = function() {
+    home_screen.HomeScreen.__proto__.new.call(this);
     ;
-  }).prototype = mask_text_input_formatter._TextMatcher.prototype;
-  dart.addTypeTests(mask_text_input_formatter._TextMatcher);
-  dart.addTypeCaches(mask_text_input_formatter._TextMatcher);
-  dart.setMethodSignature(mask_text_input_formatter._TextMatcher, () => ({
-    __proto__: dart.getMethods(mask_text_input_formatter._TextMatcher.__proto__),
-    removeRange: dart.fnType(dart.void, [core.int, core.int]),
-    insert: dart.fnType(dart.void, [core.int, core.String]),
-    removeAt: dart.fnType(dart.void, [core.int]),
-    _get: dart.fnType(core.String, [core.int]),
-    clear: dart.fnType(dart.void, []),
-    set: dart.fnType(dart.void, [core.String])
+  }).prototype = home_screen.HomeScreen.prototype;
+  dart.addTypeTests(home_screen.HomeScreen);
+  dart.addTypeCaches(home_screen.HomeScreen);
+  dart.setMethodSignature(home_screen.HomeScreen, () => ({
+    __proto__: dart.getMethods(home_screen.HomeScreen.__proto__),
+    createState: dart.fnType(home_screen._HomeScreenState, [])
   }));
-  dart.setGetterSignature(mask_text_input_formatter._TextMatcher, () => ({
-    __proto__: dart.getGetters(mask_text_input_formatter._TextMatcher.__proto__),
-    length: core.int
-  }));
-  dart.setLibraryUri(mask_text_input_formatter._TextMatcher, I[2]);
-  dart.setFieldSignature(mask_text_input_formatter._TextMatcher, () => ({
-    __proto__: dart.getFields(mask_text_input_formatter._TextMatcher.__proto__),
-    [_symbolArray]: dart.finalFieldType(core.List$(core.String))
-  }));
-  dart.defineExtensionMethods(mask_text_input_formatter._TextMatcher, ['toString']);
-  login_controller.LoginController = class LoginController extends core.Object {
-    login(name, phone, context) {
-      if (name[$isNotEmpty] && phone.length === 15) {
-        let user = new user_model.UserModel.new({name: name, phone: phone});
-        T.FutureOfNull().delayed(new core.Duration.new({seconds: 2}), dart.fn(() => {
-          scaffold.ScaffoldMessenger.of(context).showSnackBar(new snack_bar.SnackBar.new({content: new text.Text.new("Login bem-sucedido para " + user.name)}));
-        }, T.VoidToNull()));
-      } else {
-        scaffold.ScaffoldMessenger.of(context).showSnackBar(new snack_bar.SnackBar.new({content: new text.Text.new("Preencha os campos corretamente")}));
-      }
+  dart.setLibraryUri(home_screen.HomeScreen, I[2]);
+  var _adicionarEvento = dart.privateName(home_screen, "_adicionarEvento");
+  home_screen._HomeScreenState = class _HomeScreenState extends framework.State$(home_screen.HomeScreen) {
+    initState() {
+      super.initState();
+      this.eventos = T.JSArrayOfEvento().of([new evento_model.Evento.new({id: "1", nome: "Festa Junina", data: new core.DateTime.now().add(new core.Duration.new({days: 7})), cidade: "São Paulo", estado: "SP", endereco: "Rua Exemplo, 123", descricao: "Festa tradicional com comidas típicas e quadrilha", publico: "Todas as idades"}), new evento_model.Evento.new({id: "2", nome: "Feira de Artesanato", data: new core.DateTime.now().add(new core.Duration.new({days: 14})), cidade: "Rio de Janeiro", estado: "RJ", endereco: "Avenida Principal, 456", descricao: "Feira com produtos artesanais da região", publico: "Adulto"})]);
+    }
+    [_adicionarEvento](novoEvento) {
+      this.setState(dart.fn(() => {
+        this.eventos[$add](novoEvento);
+      }, T.VoidTovoid()));
+    }
+    build(context) {
+      return new scaffold.Scaffold.new({appBar: new app_bar.AppBar.new({title: new text.Text.new("Eventos Comunitários"), centerTitle: true}), body: this.eventos[$isEmpty] ? new basic.Center.new({child: new text.Text.new("Nenhum evento cadastrado", {style: new text_style.TextStyle.new({fontSize: 18})})}) : new scroll_view.ListView.builder({padding: new edge_insets.EdgeInsets.symmetric({vertical: 8}), itemCount: this.eventos[$length], itemBuilder: dart.fn((context, index) => new evento_item.EventoItem.new({evento: this.eventos[$_get](index), onTap: dart.fn(() => {
+              navigator.Navigator.push(dart.dynamic, context, new page.MaterialPageRoute.new({builder: dart.fn(context => new evento_detail_screen.EventoDetailScreen.new({evento: this.eventos[$_get](index)}), T.BuildContextToEventoDetailScreen())}));
+            }, T.VoidTovoid())}), T.BuildContextAndintToEventoItem())}), floatingActionButton: new floating_action_button.FloatingActionButton.new({onPressed: dart.fn(() => async.async(dart.void, (function*() {
+            let novoEvento = (yield navigator.Navigator.push(evento_model.Evento, context, new (T.MaterialPageRouteOfEvento()).new({builder: dart.fn(context => new add_evento_screen.AddEventoScreen.new(), T.BuildContextToAddEventoScreen())})));
+            if (novoEvento != null) {
+              this[_adicionarEvento](novoEvento);
+            }
+          }).bind(this)), T.VoidToFutureOfvoid()), child: new icon$.Icon.new(icons.Icons.add), tooltip: "Adicionar Evento"})});
     }
     static ['_#new#tearOff']() {
-      return new login_controller.LoginController.new();
+      return new home_screen._HomeScreenState.new();
     }
   };
-  (login_controller.LoginController.new = function() {
+  (home_screen._HomeScreenState.new = function() {
+    this.eventos = T.JSArrayOfEvento().of([]);
+    home_screen._HomeScreenState.__proto__.new.call(this);
     ;
-  }).prototype = login_controller.LoginController.prototype;
-  dart.addTypeTests(login_controller.LoginController);
-  dart.addTypeCaches(login_controller.LoginController);
-  dart.setMethodSignature(login_controller.LoginController, () => ({
-    __proto__: dart.getMethods(login_controller.LoginController.__proto__),
-    login: dart.fnType(dart.void, [core.String, core.String, framework.BuildContext])
+  }).prototype = home_screen._HomeScreenState.prototype;
+  dart.addTypeTests(home_screen._HomeScreenState);
+  dart.addTypeCaches(home_screen._HomeScreenState);
+  dart.setMethodSignature(home_screen._HomeScreenState, () => ({
+    __proto__: dart.getMethods(home_screen._HomeScreenState.__proto__),
+    [_adicionarEvento]: dart.fnType(dart.void, [evento_model.Evento]),
+    build: dart.fnType(framework.Widget, [framework.BuildContext])
   }));
-  dart.setLibraryUri(login_controller.LoginController, I[3]);
-  var name$ = dart.privateName(user_model, "UserModel.name");
-  var phone$ = dart.privateName(user_model, "UserModel.phone");
-  user_model.UserModel = class UserModel extends core.Object {
-    get name() {
-      return this[name$];
+  dart.setLibraryUri(home_screen._HomeScreenState, I[2]);
+  dart.setFieldSignature(home_screen._HomeScreenState, () => ({
+    __proto__: dart.getFields(home_screen._HomeScreenState.__proto__),
+    eventos: dart.fieldType(core.List$(evento_model.Evento))
+  }));
+  var evento$ = dart.privateName(evento_item, "EventoItem.evento");
+  var onTap$ = dart.privateName(evento_item, "EventoItem.onTap");
+  var _formatDate = dart.privateName(evento_item, "_formatDate");
+  evento_item.EventoItem = class EventoItem extends framework.StatelessWidget {
+    get evento() {
+      return this[evento$];
     }
-    set name(value) {
-      super.name = value;
+    set evento(value) {
+      super.evento = value;
     }
-    get phone() {
-      return this[phone$];
+    get onTap() {
+      return this[onTap$];
     }
-    set phone(value) {
-      super.phone = value;
+    set onTap(value) {
+      super.onTap = value;
     }
     static ['_#new#tearOff'](opts) {
-      let name = opts && 'name' in opts ? opts.name : null;
-      let phone = opts && 'phone' in opts ? opts.phone : null;
-      return new user_model.UserModel.new({name: name, phone: phone});
+      let evento = opts && 'evento' in opts ? opts.evento : null;
+      let onTap = opts && 'onTap' in opts ? opts.onTap : null;
+      return new evento_item.EventoItem.new({evento: evento, onTap: onTap});
+    }
+    build(context) {
+      return new card.Card.new({elevation: 2, margin: new edge_insets.EdgeInsets.symmetric({horizontal: 16, vertical: 8}), child: new ink_well.InkWell.new({onTap: this.onTap, child: new basic.Padding.new({padding: C[2] || CT.C2, child: new basic.Column.new({crossAxisAlignment: flex.CrossAxisAlignment.start, children: T.JSArrayOfWidget().of([new text.Text.new(this.evento.nome, {style: new text_style.TextStyle.new({fontSize: 18, fontWeight: ui.FontWeight.bold})}), new basic.SizedBox.new({height: 8}), new basic.Row.new({children: T.JSArrayOfWidget().of([new icon$.Icon.new(icons.Icons.calendar_today, {size: 16}), new basic.SizedBox.new({width: 8}), new text.Text.new(this[_formatDate](this.evento.data), {style: new text_style.TextStyle.new({fontSize: 14})})])}), new basic.SizedBox.new({height: 4}), new basic.Row.new({children: T.JSArrayOfWidget().of([new icon$.Icon.new(icons.Icons.location_on, {size: 16}), new basic.SizedBox.new({width: 8}), new text.Text.new(this.evento.cidade + "/" + this.evento.estado, {style: new text_style.TextStyle.new({fontSize: 14})})])}), new basic.SizedBox.new({height: 4}), new basic.Row.new({children: T.JSArrayOfWidget().of([new icon$.Icon.new(icons.Icons.people, {size: 16}), new basic.SizedBox.new({width: 8}), new text.Text.new(this.evento.publico, {style: new text_style.TextStyle.new({fontSize: 14})})])})])})})})});
+    }
+    [_formatDate](date) {
+      return dart.str(date.day) + "/" + dart.str(date.month) + "/" + dart.str(date.year);
     }
   };
-  (user_model.UserModel.new = function(opts) {
-    let name = opts && 'name' in opts ? opts.name : null;
-    let phone = opts && 'phone' in opts ? opts.phone : null;
-    this[name$] = name;
-    this[phone$] = phone;
+  (evento_item.EventoItem.new = function(opts) {
+    let evento = opts && 'evento' in opts ? opts.evento : null;
+    let onTap = opts && 'onTap' in opts ? opts.onTap : null;
+    this[evento$] = evento;
+    this[onTap$] = onTap;
+    evento_item.EventoItem.__proto__.new.call(this);
     ;
-  }).prototype = user_model.UserModel.prototype;
-  dart.addTypeTests(user_model.UserModel);
-  dart.addTypeCaches(user_model.UserModel);
-  dart.setLibraryUri(user_model.UserModel, I[4]);
-  dart.setFieldSignature(user_model.UserModel, () => ({
-    __proto__: dart.getFields(user_model.UserModel.__proto__),
-    name: dart.finalFieldType(core.String),
-    phone: dart.finalFieldType(core.String)
+  }).prototype = evento_item.EventoItem.prototype;
+  dart.addTypeTests(evento_item.EventoItem);
+  dart.addTypeCaches(evento_item.EventoItem);
+  dart.setMethodSignature(evento_item.EventoItem, () => ({
+    __proto__: dart.getMethods(evento_item.EventoItem.__proto__),
+    build: dart.fnType(framework.Widget, [framework.BuildContext]),
+    [_formatDate]: dart.fnType(core.String, [core.DateTime])
+  }));
+  dart.setLibraryUri(evento_item.EventoItem, I[3]);
+  dart.setFieldSignature(evento_item.EventoItem, () => ({
+    __proto__: dart.getFields(evento_item.EventoItem.__proto__),
+    evento: dart.finalFieldType(evento_model.Evento),
+    onTap: dart.finalFieldType(dart.fnType(dart.void, []))
+  }));
+  var id$ = dart.privateName(evento_model, "Evento.id");
+  var nome$ = dart.privateName(evento_model, "Evento.nome");
+  var data$ = dart.privateName(evento_model, "Evento.data");
+  var cidade$ = dart.privateName(evento_model, "Evento.cidade");
+  var estado$ = dart.privateName(evento_model, "Evento.estado");
+  var endereco$ = dart.privateName(evento_model, "Evento.endereco");
+  var descricao$ = dart.privateName(evento_model, "Evento.descricao");
+  var publico$ = dart.privateName(evento_model, "Evento.publico");
+  evento_model.Evento = class Evento extends core.Object {
+    get id() {
+      return this[id$];
+    }
+    set id(value) {
+      super.id = value;
+    }
+    get nome() {
+      return this[nome$];
+    }
+    set nome(value) {
+      super.nome = value;
+    }
+    get data() {
+      return this[data$];
+    }
+    set data(value) {
+      super.data = value;
+    }
+    get cidade() {
+      return this[cidade$];
+    }
+    set cidade(value) {
+      super.cidade = value;
+    }
+    get estado() {
+      return this[estado$];
+    }
+    set estado(value) {
+      super.estado = value;
+    }
+    get endereco() {
+      return this[endereco$];
+    }
+    set endereco(value) {
+      super.endereco = value;
+    }
+    get descricao() {
+      return this[descricao$];
+    }
+    set descricao(value) {
+      super.descricao = value;
+    }
+    get publico() {
+      return this[publico$];
+    }
+    set publico(value) {
+      super.publico = value;
+    }
+    static ['_#new#tearOff'](opts) {
+      let id = opts && 'id' in opts ? opts.id : null;
+      let nome = opts && 'nome' in opts ? opts.nome : null;
+      let data = opts && 'data' in opts ? opts.data : null;
+      let cidade = opts && 'cidade' in opts ? opts.cidade : null;
+      let estado = opts && 'estado' in opts ? opts.estado : null;
+      let endereco = opts && 'endereco' in opts ? opts.endereco : null;
+      let descricao = opts && 'descricao' in opts ? opts.descricao : null;
+      let publico = opts && 'publico' in opts ? opts.publico : null;
+      return new evento_model.Evento.new({id: id, nome: nome, data: data, cidade: cidade, estado: estado, endereco: endereco, descricao: descricao, publico: publico});
+    }
+    static fromMap(map, id) {
+      let t0, t0$, t0$0, t0$1, t0$2, t0$3;
+      return new evento_model.Evento.new({id: id, nome: core.String.as((t0 = map[$_get]("nome"), t0 == null ? "" : t0)), data: core.DateTime.parse(core.String.as(map[$_get]("data"))), cidade: core.String.as((t0$ = map[$_get]("cidade"), t0$ == null ? "" : t0$)), estado: core.String.as((t0$0 = map[$_get]("estado"), t0$0 == null ? "" : t0$0)), endereco: core.String.as((t0$1 = map[$_get]("endereco"), t0$1 == null ? "" : t0$1)), descricao: core.String.as((t0$2 = map[$_get]("descricao"), t0$2 == null ? "" : t0$2)), publico: core.String.as((t0$3 = map[$_get]("publico"), t0$3 == null ? "Todas as idades" : t0$3))});
+    }
+    static ['_#fromMap#tearOff'](map, id) {
+      return evento_model.Evento.fromMap(map, id);
+    }
+    toMap() {
+      return new (T.IdentityMapOfString$dynamic()).from(["nome", this.nome, "data", this.data.toIso8601String(), "cidade", this.cidade, "estado", this.estado, "endereco", this.endereco, "descricao", this.descricao, "publico", this.publico]);
+    }
+  };
+  (evento_model.Evento.new = function(opts) {
+    let id = opts && 'id' in opts ? opts.id : null;
+    let nome = opts && 'nome' in opts ? opts.nome : null;
+    let data = opts && 'data' in opts ? opts.data : null;
+    let cidade = opts && 'cidade' in opts ? opts.cidade : null;
+    let estado = opts && 'estado' in opts ? opts.estado : null;
+    let endereco = opts && 'endereco' in opts ? opts.endereco : null;
+    let descricao = opts && 'descricao' in opts ? opts.descricao : null;
+    let publico = opts && 'publico' in opts ? opts.publico : null;
+    this[id$] = id;
+    this[nome$] = nome;
+    this[data$] = data;
+    this[cidade$] = cidade;
+    this[estado$] = estado;
+    this[endereco$] = endereco;
+    this[descricao$] = descricao;
+    this[publico$] = publico;
+    ;
+  }).prototype = evento_model.Evento.prototype;
+  dart.addTypeTests(evento_model.Evento);
+  dart.addTypeCaches(evento_model.Evento);
+  dart.setMethodSignature(evento_model.Evento, () => ({
+    __proto__: dart.getMethods(evento_model.Evento.__proto__),
+    toMap: dart.fnType(core.Map$(core.String, dart.dynamic), [])
+  }));
+  dart.setStaticMethodSignature(evento_model.Evento, () => ['fromMap']);
+  dart.setLibraryUri(evento_model.Evento, I[4]);
+  dart.setFieldSignature(evento_model.Evento, () => ({
+    __proto__: dart.getFields(evento_model.Evento.__proto__),
+    id: dart.finalFieldType(core.String),
+    nome: dart.finalFieldType(core.String),
+    data: dart.finalFieldType(core.DateTime),
+    cidade: dart.finalFieldType(core.String),
+    estado: dart.finalFieldType(core.String),
+    endereco: dart.finalFieldType(core.String),
+    descricao: dart.finalFieldType(core.String),
+    publico: dart.finalFieldType(core.String)
+  }));
+  add_evento_screen.AddEventoScreen = class AddEventoScreen extends framework.StatefulWidget {
+    createState() {
+      return new add_evento_screen._AddEventoScreenState.new();
+    }
+    static ['_#new#tearOff']() {
+      return new add_evento_screen.AddEventoScreen.new();
+    }
+  };
+  (add_evento_screen.AddEventoScreen.new = function() {
+    add_evento_screen.AddEventoScreen.__proto__.new.call(this);
+    ;
+  }).prototype = add_evento_screen.AddEventoScreen.prototype;
+  dart.addTypeTests(add_evento_screen.AddEventoScreen);
+  dart.addTypeCaches(add_evento_screen.AddEventoScreen);
+  dart.setMethodSignature(add_evento_screen.AddEventoScreen, () => ({
+    __proto__: dart.getMethods(add_evento_screen.AddEventoScreen.__proto__),
+    createState: dart.fnType(add_evento_screen._AddEventoScreenState, [])
+  }));
+  dart.setLibraryUri(add_evento_screen.AddEventoScreen, I[5]);
+  var _formKey = dart.privateName(add_evento_screen, "_formKey");
+  var _nomeController = dart.privateName(add_evento_screen, "_nomeController");
+  var _cidadeController = dart.privateName(add_evento_screen, "_cidadeController");
+  var _estadoController = dart.privateName(add_evento_screen, "_estadoController");
+  var _enderecoController = dart.privateName(add_evento_screen, "_enderecoController");
+  var _descricaoController = dart.privateName(add_evento_screen, "_descricaoController");
+  var _data = dart.privateName(add_evento_screen, "_data");
+  var _publico = dart.privateName(add_evento_screen, "_publico");
+  var _publicoOptions = dart.privateName(add_evento_screen, "_publicoOptions");
+  var _selectDate = dart.privateName(add_evento_screen, "_selectDate");
+  var _submit = dart.privateName(add_evento_screen, "_submit");
+  add_evento_screen._AddEventoScreenState = class _AddEventoScreenState extends framework.State$(add_evento_screen.AddEventoScreen) {
+    [_selectDate](context) {
+      return async.async(dart.void, (function* _selectDate() {
+        let picked = (yield date_picker.showDatePicker({context: context, initialDate: this[_data], firstDate: new core.DateTime.now(), lastDate: new core.DateTime.new(2100)}));
+        if (picked != null && !dart.equals(picked, this[_data])) {
+          this.setState(dart.fn(() => {
+            this[_data] = picked;
+          }, T.VoidTovoid()));
+        }
+      }).bind(this));
+    }
+    [_submit]() {
+      if (dart.nullCheck(this[_formKey].currentState).validate()) {
+        let novoEvento = new evento_model.Evento.new({id: new core.DateTime.now().millisecondsSinceEpoch[$toString](), nome: this[_nomeController].text, data: this[_data], cidade: this[_cidadeController].text, estado: this[_estadoController].text, endereco: this[_enderecoController].text, descricao: this[_descricaoController].text, publico: this[_publico]});
+        navigator.Navigator.pop(evento_model.Evento, this.context, novoEvento);
+      }
+    }
+    dispose() {
+      this[_nomeController].dispose();
+      this[_cidadeController].dispose();
+      this[_estadoController].dispose();
+      this[_enderecoController].dispose();
+      this[_descricaoController].dispose();
+      super.dispose();
+    }
+    build(context) {
+      return new scaffold.Scaffold.new({appBar: new app_bar.AppBar.new({title: new text.Text.new("Novo Evento"), actions: T.JSArrayOfWidget().of([new icon_button.IconButton.new({icon: new icon$.Icon.new(icons.Icons.check), onPressed: dart.bind(this, _submit)})])}), body: new basic.Padding.new({padding: C[2] || CT.C2, child: new form.Form.new({key: this[_formKey], child: new scroll_view.ListView.new({children: T.JSArrayOfWidget().of([new text_form_field.TextFormField.new({controller: this[_nomeController], decoration: new input_decorator.InputDecoration.new({labelText: "Nome do Evento", border: new input_border.OutlineInputBorder.new(), prefixIcon: new icon$.Icon.new(icons.Icons.event)}), validator: dart.fn(value => {
+                    if (value == null || value[$isEmpty]) {
+                      return "Por favor, insira o nome do evento";
+                    }
+                    return null;
+                  }, T.StringNToStringN())}), new basic.SizedBox.new({height: 16}), new ink_well.InkWell.new({onTap: dart.fn(() => this[_selectDate](context), T.VoidTovoid()), child: new input_decorator.InputDecorator.new({decoration: new input_decorator.InputDecoration.new({labelText: "Data do Evento", border: new input_border.OutlineInputBorder.new(), prefixIcon: new icon$.Icon.new(icons.Icons.calendar_today)}), child: new basic.Row.new({mainAxisAlignment: flex.MainAxisAlignment.spaceBetween, children: T.JSArrayOfWidget().of([new text.Text.new(new date_format.DateFormat.new("dd/MM/yyyy").format(this[_data])), new icon$.Icon.new(icons.Icons.arrow_drop_down)])})})}), new basic.SizedBox.new({height: 16}), new text_form_field.TextFormField.new({controller: this[_cidadeController], decoration: new input_decorator.InputDecoration.new({labelText: "Cidade", border: new input_border.OutlineInputBorder.new(), prefixIcon: new icon$.Icon.new(icons.Icons.location_city)}), validator: dart.fn(value => {
+                    if (value == null || value[$isEmpty]) {
+                      return "Por favor, insira a cidade";
+                    }
+                    return null;
+                  }, T.StringNToStringN())}), new basic.SizedBox.new({height: 16}), new text_form_field.TextFormField.new({controller: this[_estadoController], decoration: new input_decorator.InputDecoration.new({labelText: "Estado (sigla)", border: new input_border.OutlineInputBorder.new(), prefixIcon: new icon$.Icon.new(icons.Icons.map)}), validator: dart.fn(value => {
+                    if (value == null || value[$isEmpty] || value.length !== 2) {
+                      return "Insira a sigla do estado (2 letras)";
+                    }
+                    return null;
+                  }, T.StringNToStringN())}), new basic.SizedBox.new({height: 16}), new text_form_field.TextFormField.new({controller: this[_enderecoController], decoration: new input_decorator.InputDecoration.new({labelText: "Endereço completo", border: new input_border.OutlineInputBorder.new(), prefixIcon: new icon$.Icon.new(icons.Icons.place)}), validator: dart.fn(value => {
+                    if (value == null || value[$isEmpty]) {
+                      return "Por favor, insira o endereço";
+                    }
+                    return null;
+                  }, T.StringNToStringN())}), new basic.SizedBox.new({height: 16}), new (T.DropdownButtonFormFieldOfString()).new({value: this[_publico], decoration: new input_decorator.InputDecoration.new({labelText: "Público-alvo", border: new input_border.OutlineInputBorder.new(), prefixIcon: new icon$.Icon.new(icons.Icons.people)}), items: this[_publicoOptions][$map](T.DropdownMenuItemOfString(), dart.fn(value => new (T.DropdownMenuItemOfString()).new({value: value, child: new text.Text.new(value)}), T.StringToDropdownMenuItemOfString()))[$toList](), onChanged: dart.fn(value => {
+                    this.setState(dart.fn(() => {
+                      this[_publico] = dart.nullCheck(value);
+                    }, T.VoidTovoid()));
+                  }, T.StringNTovoid())}), new basic.SizedBox.new({height: 16}), new text_form_field.TextFormField.new({controller: this[_descricaoController], decoration: new input_decorator.InputDecoration.new({labelText: "Descrição do Evento", border: new input_border.OutlineInputBorder.new(), alignLabelWithHint: true}), maxLines: 3, validator: dart.fn(value => {
+                    if (value == null || value[$isEmpty]) {
+                      return "Por favor, insira uma descrição";
+                    }
+                    return null;
+                  }, T.StringNToStringN())})])})})})});
+    }
+    static ['_#new#tearOff']() {
+      return new add_evento_screen._AddEventoScreenState.new();
+    }
+  };
+  (add_evento_screen._AddEventoScreenState.new = function() {
+    this[_formKey] = T.GlobalKeyOfFormState().new();
+    this[_nomeController] = new editable_text.TextEditingController.new();
+    this[_cidadeController] = new editable_text.TextEditingController.new();
+    this[_estadoController] = new editable_text.TextEditingController.new();
+    this[_enderecoController] = new editable_text.TextEditingController.new();
+    this[_descricaoController] = new editable_text.TextEditingController.new();
+    this[_data] = new core.DateTime.now();
+    this[_publico] = "Todas as idades";
+    this[_publicoOptions] = T.JSArrayOfString().of(["Todas as idades", "Infantil", "Adulto", "Melhor idade"]);
+    add_evento_screen._AddEventoScreenState.__proto__.new.call(this);
+    ;
+  }).prototype = add_evento_screen._AddEventoScreenState.prototype;
+  dart.addTypeTests(add_evento_screen._AddEventoScreenState);
+  dart.addTypeCaches(add_evento_screen._AddEventoScreenState);
+  dart.setMethodSignature(add_evento_screen._AddEventoScreenState, () => ({
+    __proto__: dart.getMethods(add_evento_screen._AddEventoScreenState.__proto__),
+    [_selectDate]: dart.fnType(async.Future$(dart.void), [framework.BuildContext]),
+    [_submit]: dart.fnType(dart.void, []),
+    build: dart.fnType(framework.Widget, [framework.BuildContext])
+  }));
+  dart.setLibraryUri(add_evento_screen._AddEventoScreenState, I[5]);
+  dart.setFieldSignature(add_evento_screen._AddEventoScreenState, () => ({
+    __proto__: dart.getFields(add_evento_screen._AddEventoScreenState.__proto__),
+    [_formKey]: dart.finalFieldType(framework.GlobalKey$(form.FormState)),
+    [_nomeController]: dart.finalFieldType(editable_text.TextEditingController),
+    [_cidadeController]: dart.finalFieldType(editable_text.TextEditingController),
+    [_estadoController]: dart.finalFieldType(editable_text.TextEditingController),
+    [_enderecoController]: dart.finalFieldType(editable_text.TextEditingController),
+    [_descricaoController]: dart.finalFieldType(editable_text.TextEditingController),
+    [_data]: dart.fieldType(core.DateTime),
+    [_publico]: dart.fieldType(core.String),
+    [_publicoOptions]: dart.finalFieldType(core.List$(core.String))
+  }));
+  var evento$0 = dart.privateName(evento_detail_screen, "EventoDetailScreen.evento");
+  var _formatDate$ = dart.privateName(evento_detail_screen, "_formatDate");
+  var _buildDetailRow = dart.privateName(evento_detail_screen, "_buildDetailRow");
+  evento_detail_screen.EventoDetailScreen = class EventoDetailScreen extends framework.StatelessWidget {
+    get evento() {
+      return this[evento$0];
+    }
+    set evento(value) {
+      super.evento = value;
+    }
+    static ['_#new#tearOff'](opts) {
+      let evento = opts && 'evento' in opts ? opts.evento : null;
+      return new evento_detail_screen.EventoDetailScreen.new({evento: evento});
+    }
+    build(context) {
+      return new scaffold.Scaffold.new({appBar: new app_bar.AppBar.new({title: new text.Text.new("Detalhes do Evento")}), body: new single_child_scroll_view.SingleChildScrollView.new({padding: C[2] || CT.C2, child: new basic.Column.new({crossAxisAlignment: flex.CrossAxisAlignment.start, children: T.JSArrayOfWidget().of([new text.Text.new(this.evento.nome, {style: new text_style.TextStyle.new({fontSize: 24, fontWeight: ui.FontWeight.bold})}), new basic.SizedBox.new({height: 16}), this[_buildDetailRow](icons.Icons.calendar_today, "Data:", this[_formatDate$](this.evento.data)), this[_buildDetailRow](icons.Icons.location_city, "Cidade/Estado:", this.evento.cidade + "/" + this.evento.estado), this[_buildDetailRow](icons.Icons.place, "Endereço:", this.evento.endereco), this[_buildDetailRow](icons.Icons.people, "Público-alvo:", this.evento.publico), new basic.SizedBox.new({height: 24}), new text.Text.new("Descrição:", {style: new text_style.TextStyle.new({fontSize: 18, fontWeight: ui.FontWeight.bold})}), new basic.SizedBox.new({height: 8}), new text.Text.new(this.evento.descricao, {style: new text_style.TextStyle.new({fontSize: 16})})])})})});
+    }
+    [_buildDetailRow](icon, label, value) {
+      return new basic.Padding.new({padding: C[3] || CT.C3, child: new basic.Row.new({crossAxisAlignment: flex.CrossAxisAlignment.start, children: T.JSArrayOfWidget().of([new icon$.Icon.new(icon, {size: 24}), new basic.SizedBox.new({width: 16}), new basic.Expanded.new({child: new basic.Column.new({crossAxisAlignment: flex.CrossAxisAlignment.start, children: T.JSArrayOfWidget().of([new text.Text.new(label, {style: new text_style.TextStyle.new({fontSize: 16, fontWeight: ui.FontWeight.bold})}), new basic.SizedBox.new({height: 4}), new text.Text.new(value, {style: new text_style.TextStyle.new({fontSize: 16})})])})})])})});
+    }
+    [_formatDate$](date) {
+      return new date_format.DateFormat.new("dd/MM/yyyy").format(date);
+    }
+  };
+  (evento_detail_screen.EventoDetailScreen.new = function(opts) {
+    let evento = opts && 'evento' in opts ? opts.evento : null;
+    this[evento$0] = evento;
+    evento_detail_screen.EventoDetailScreen.__proto__.new.call(this);
+    ;
+  }).prototype = evento_detail_screen.EventoDetailScreen.prototype;
+  dart.addTypeTests(evento_detail_screen.EventoDetailScreen);
+  dart.addTypeCaches(evento_detail_screen.EventoDetailScreen);
+  dart.setMethodSignature(evento_detail_screen.EventoDetailScreen, () => ({
+    __proto__: dart.getMethods(evento_detail_screen.EventoDetailScreen.__proto__),
+    build: dart.fnType(framework.Widget, [framework.BuildContext]),
+    [_buildDetailRow]: dart.fnType(framework.Widget, [icon_data.IconData, core.String, core.String]),
+    [_formatDate$]: dart.fnType(core.String, [core.DateTime])
+  }));
+  dart.setLibraryUri(evento_detail_screen.EventoDetailScreen, I[6]);
+  dart.setFieldSignature(evento_detail_screen.EventoDetailScreen, () => ({
+    __proto__: dart.getFields(evento_detail_screen.EventoDetailScreen.__proto__),
+    evento: dart.finalFieldType(evento_model.Evento)
   }));
   dart.trackLibraries("zapp_user_main", {
     "file:///zapp/project/.zapp_entry.dart": $46zapp_entry,
     "file:///zapp/project/lib/main.dart": main,
     "file:///zapp/project/.dart_tool/dartpad/web_plugin_registrant.dart": web_plugin_registrant,
-    "file:///zapp/project/lib/views/login_screen.dart": login_screen,
-    "package:mask_text_input_formatter/mask_text_input_formatter.dart": mask_text_input_formatter,
-    "file:///zapp/project/lib/controllers/login_controller.dart": login_controller,
-    "file:///zapp/project/lib/models/user_model.dart": user_model
+    "file:///zapp/project/lib/login_screen.dart": login_screen,
+    "file:///zapp/project/lib/home_screen.dart": home_screen,
+    "file:///zapp/project/lib/evento_item.dart": evento_item,
+    "file:///zapp/project/lib/evento_model.dart": evento_model,
+    "file:///zapp/project/lib/add_evento_screen.dart": add_evento_screen,
+    "file:///zapp/project/lib/evento_detail_screen.dart": evento_detail_screen
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["/zapp/project/.zapp_entry.dart","/zapp/project/lib/main.dart","/zapp/project/.dart_tool/dartpad/web_plugin_registrant.dart","/zapp/project/lib/views/login_screen.dart","/zapp/pub/.pub_cache/hosted/pub.dev/mask_text_input_formatter-2.9.0/lib/mask_text_input_formatter.dart","/zapp/project/lib/controllers/login_controller.dart","/zapp/project/lib/models/user_model.dart"],"names":[],"mappings":"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","file":"main.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["/zapp/project/.zapp_entry.dart","/zapp/project/lib/main.dart","/zapp/project/.dart_tool/dartpad/web_plugin_registrant.dart","/zapp/project/lib/login_screen.dart","/zapp/project/lib/home_screen.dart","/zapp/project/lib/evento_item.dart","/zapp/project/lib/evento_model.dart","/zapp/project/lib/add_evento_screen.dart","/zapp/project/lib/evento_detail_screen.dart"],"names":[],"mappings":"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","file":"main.js"}');
   // Exports:
   return {
     zapp__project__$46zapp_entry: $46zapp_entry,
     zapp__project__lib__main: main,
     zapp__project__$46dart_tool__dartpad__web_plugin_registrant: web_plugin_registrant,
-    zapp__project__lib__views__login_screen: login_screen,
-    mask_text_input_formatter: mask_text_input_formatter,
-    zapp__project__lib__controllers__login_controller: login_controller,
-    zapp__project__lib__models__user_model: user_model
+    zapp__project__lib__login_screen: login_screen,
+    zapp__project__lib__home_screen: home_screen,
+    zapp__project__lib__evento_item: evento_item,
+    zapp__project__lib__evento_model: evento_model,
+    zapp__project__lib__add_evento_screen: add_evento_screen,
+    zapp__project__lib__evento_detail_screen: evento_detail_screen
   };
 }));
 
