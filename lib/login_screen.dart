@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'home_screen.dart';
 
 class LoginScreen extends StatelessWidget {
+  const LoginScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -12,7 +14,7 @@ class LoginScreen extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
+                const Text(
                   'Bem-vindo',
                   style: TextStyle(
                     fontSize: 32,
@@ -20,21 +22,21 @@ class LoginScreen extends StatelessWidget {
                     color: Colors.blue,
                   ),
                 ),
-                SizedBox(height: 16),
-                Text(
+                const SizedBox(height: 16),
+                const Text(
                   'Faça login para continuar',
                   style: TextStyle(fontSize: 16),
                 ),
-                SizedBox(height: 32),
-                TextField(
+                const SizedBox(height: 32),
+                const TextField(
                   decoration: InputDecoration(
                     labelText: 'Nome',
                     border: OutlineInputBorder(),
                     prefixIcon: Icon(Icons.person),
                   ),
                 ),
-                SizedBox(height: 16),
-                TextField(
+                const SizedBox(height: 16),
+                const TextField(
                   decoration: InputDecoration(
                     labelText: 'Telefone',
                     border: OutlineInputBorder(),
@@ -42,20 +44,20 @@ class LoginScreen extends StatelessWidget {
                   ),
                   keyboardType: TextInputType.phone,
                 ),
-                SizedBox(height: 32),
+                const SizedBox(height: 32),
                 SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
                     onPressed: () {
                       Navigator.pushReplacement(
                         context,
-                        MaterialPageRoute(builder: (context) => HomeScreen()),
+                        MaterialPageRoute(builder: (context) => const HomeScreen()),
                       );
                     },
-                    child: Text('Entrar'),
                     style: ElevatedButton.styleFrom(
-                      padding: EdgeInsets.symmetric(vertical: 16),
+                      padding: const EdgeInsets.symmetric(vertical: 16),
                     ),
+                    child: const Text('Entrar'),
                   ),
                 ),
               ],

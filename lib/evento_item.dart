@@ -5,7 +5,7 @@ class EventoItem extends StatelessWidget {
   final Evento evento;
   final VoidCallback onTap;
 
-  const EventoItem({
+  const EventoItem({super.key, 
     required this.evento,
     required this.onTap,
   });
@@ -14,7 +14,7 @@ class EventoItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       elevation: 2,
-      margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       child: InkWell(
         onTap: onTap,
         child: Padding(
@@ -24,41 +24,41 @@ class EventoItem extends StatelessWidget {
             children: [
               Text(
                 evento.nome,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(height: 8),
+              const SizedBox(height: 8),
               Row(
                 children: [
-                  Icon(Icons.calendar_today, size: 16),
-                  SizedBox(width: 8),
+                  const Icon(Icons.calendar_today, size: 16),
+                  const SizedBox(width: 8),
                   Text(
-                    '${_formatDate(evento.data)}',
-                    style: TextStyle(fontSize: 14),
+                    _formatDate(evento.data),
+                    style: const TextStyle(fontSize: 14),
                   ),
                 ],
               ),
-              SizedBox(height: 4),
+              const SizedBox(height: 4),
               Row(
                 children: [
-                  Icon(Icons.location_on, size: 16),
-                  SizedBox(width: 8),
+                  const Icon(Icons.location_on, size: 16),
+                  const SizedBox(width: 8),
                   Text(
                     '${evento.cidade}/${evento.estado}',
-                    style: TextStyle(fontSize: 14),
+                    style: const TextStyle(fontSize: 14),
                   ),
                 ],
               ),
-              SizedBox(height: 4),
+              const SizedBox(height: 4),
               Row(
                 children: [
-                  Icon(Icons.people, size: 16),
-                  SizedBox(width: 8),
+                  const Icon(Icons.people, size: 16),
+                  const SizedBox(width: 8),
                   Text(
                     evento.publico,
-                    style: TextStyle(fontSize: 14),
+                    style: const TextStyle(fontSize: 14),
                   ),
                 ],
               ),

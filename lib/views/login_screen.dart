@@ -10,6 +10,8 @@ class LoginScreen extends StatelessWidget {
   );
   final LoginController loginController = LoginController();
 
+  LoginScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,7 +30,7 @@ class LoginScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Text(
+                const Text(
                   "Bem-vindo",
                   textAlign: TextAlign.center,
                   style: TextStyle(
@@ -37,8 +39,8 @@ class LoginScreen extends StatelessWidget {
                     color: Colors.white,
                   ),
                 ),
-                SizedBox(height: 8),
-                Text(
+                const SizedBox(height: 8),
+                const Text(
                   "Faça login para continuar",
                   textAlign: TextAlign.center,
                   style: TextStyle(
@@ -46,12 +48,12 @@ class LoginScreen extends StatelessWidget {
                     color: Colors.white70,
                   ),
                 ),
-                SizedBox(height: 40),
+                const SizedBox(height: 40),
                 Container(
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(12),
-                    boxShadow: [
+                    boxShadow: const [
                       BoxShadow(
                         color: Colors.black26,
                         blurRadius: 8,
@@ -72,7 +74,7 @@ class LoginScreen extends StatelessWidget {
                             ),
                           ),
                         ),
-                        SizedBox(height: 16),
+                        const SizedBox(height: 16),
                         TextField(
                           keyboardType: TextInputType.phone,
                           inputFormatters: [maskFormatter],
@@ -83,19 +85,19 @@ class LoginScreen extends StatelessWidget {
                             ),
                           ),
                         ),
-                        SizedBox(height: 20),
+                        const SizedBox(height: 20),
                         ElevatedButton(
                           onPressed: () {
                             loginController.login(nameController.text, maskFormatter.getMaskedText(), context);
                           },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.deepPurple.shade600,
-                            padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
+                            padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10),
                             ),
                           ),
-                          child: Text("Entrar", style: TextStyle(color: Colors.white, fontSize: 18)),
+                          child: const Text("Entrar", style: TextStyle(color: Colors.white, fontSize: 18)),
                         ),
                       ],
                     ),

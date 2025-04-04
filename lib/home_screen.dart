@@ -5,6 +5,8 @@ import 'add_evento_screen.dart';
 import 'evento_detail_screen.dart';
 
 class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
+
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
@@ -20,7 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
       Evento(
         id: '1',
         nome: 'Festa Junina',
-        data: DateTime.now().add(Duration(days: 7)),
+        data: DateTime.now().add(const Duration(days: 7)),
         cidade: 'São Paulo',
         estado: 'SP',
         endereco: 'Rua Exemplo, 123',
@@ -30,7 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
       Evento(
         id: '2',
         nome: 'Feira de Artesanato',
-        data: DateTime.now().add(Duration(days: 14)),
+        data: DateTime.now().add(const Duration(days: 14)),
         cidade: 'Rio de Janeiro',
         estado: 'RJ',
         endereco: 'Avenida Principal, 456',
@@ -50,18 +52,18 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Eventos Comunitários'),
+        title: const Text('Eventos Comunitários'),
         centerTitle: true,
       ),
       body: eventos.isEmpty
-          ? Center(
+          ? const Center(
               child: Text(
                 'Nenhum evento cadastrado',
                 style: TextStyle(fontSize: 18),
               ),
             )
           : ListView.builder(
-              padding: EdgeInsets.symmetric(vertical: 8),
+              padding: const EdgeInsets.symmetric(vertical: 8),
               itemCount: eventos.length,
               itemBuilder: (context, index) {
                 return EventoItem(
@@ -70,7 +72,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => EventoDetailScreen(evento: eventos[index]),
+                        builder: (context) =>
+                            EventoDetailScreen(evento: eventos[index]),
                       ),
                     );
                   },
@@ -81,15 +84,15 @@ class _HomeScreenState extends State<HomeScreen> {
         onPressed: () async {
           final novoEvento = await Navigator.push<Evento>(
             context,
-            MaterialPageRoute(builder: (context) => AddEventoScreen()),
+            MaterialPageRoute(builder: (context) => const AddEventoScreen()),
           );
-          
+
           if (novoEvento != null) {
             _adicionarEvento(novoEvento);
           }
         },
-        child: Icon(Icons.add),
         tooltip: 'Adicionar Evento',
+        child: const Icon(Icons.add),
       ),
     );
   }

@@ -3,6 +3,8 @@ import 'package:intl/intl.dart';
 import 'evento_model.dart';
 
 class AddEventoScreen extends StatefulWidget {
+  const AddEventoScreen({super.key});
+
   @override
   _AddEventoScreenState createState() => _AddEventoScreenState();
 }
@@ -69,10 +71,10 @@ class _AddEventoScreenState extends State<AddEventoScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Novo Evento'),
+        title: const Text('Novo Evento'),
         actions: [
           IconButton(
-            icon: Icon(Icons.check),
+            icon: const Icon(Icons.check),
             onPressed: _submit,
           ),
         ],
@@ -85,7 +87,7 @@ class _AddEventoScreenState extends State<AddEventoScreen> {
             children: [
               TextFormField(
                 controller: _nomeController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Nome do Evento',
                   border: OutlineInputBorder(),
                   prefixIcon: Icon(Icons.event),
@@ -97,11 +99,11 @@ class _AddEventoScreenState extends State<AddEventoScreen> {
                   return null;
                 },
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               InkWell(
                 onTap: () => _selectDate(context),
                 child: InputDecorator(
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     labelText: 'Data do Evento',
                     border: OutlineInputBorder(),
                     prefixIcon: Icon(Icons.calendar_today),
@@ -110,15 +112,15 @@ class _AddEventoScreenState extends State<AddEventoScreen> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(DateFormat('dd/MM/yyyy').format(_data)),
-                      Icon(Icons.arrow_drop_down),
+                      const Icon(Icons.arrow_drop_down),
                     ],
                   ),
                 ),
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               TextFormField(
                 controller: _cidadeController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Cidade',
                   border: OutlineInputBorder(),
                   prefixIcon: Icon(Icons.location_city),
@@ -130,10 +132,10 @@ class _AddEventoScreenState extends State<AddEventoScreen> {
                   return null;
                 },
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               TextFormField(
                 controller: _estadoController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Estado (sigla)',
                   border: OutlineInputBorder(),
                   prefixIcon: Icon(Icons.map),
@@ -145,10 +147,10 @@ class _AddEventoScreenState extends State<AddEventoScreen> {
                   return null;
                 },
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               TextFormField(
                 controller: _enderecoController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Endereço completo',
                   border: OutlineInputBorder(),
                   prefixIcon: Icon(Icons.place),
@@ -160,10 +162,10 @@ class _AddEventoScreenState extends State<AddEventoScreen> {
                   return null;
                 },
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               DropdownButtonFormField<String>(
                 value: _publico,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Público-alvo',
                   border: OutlineInputBorder(),
                   prefixIcon: Icon(Icons.people),
@@ -180,10 +182,10 @@ class _AddEventoScreenState extends State<AddEventoScreen> {
                   });
                 },
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               TextFormField(
                 controller: _descricaoController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Descrição do Evento',
                   border: OutlineInputBorder(),
                   alignLabelWithHint: true,
